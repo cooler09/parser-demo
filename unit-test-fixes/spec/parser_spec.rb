@@ -25,7 +25,7 @@ describe Parser do
                 expect(@parser.parse("pipe:foo,bar")).to eql(['foo','bar'])
             end
         end
-        context "given the string 'comma:foo,bar'" do
+        context "given the string 'pipe:foo,bar'" do
             it "should not return ['foo','bar']" do
                 expect(@parser.parse("pipe:foo,bar")).to eql(['foo','bar'])
             end
