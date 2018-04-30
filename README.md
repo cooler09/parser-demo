@@ -11,7 +11,7 @@ This is the second of the three to complete. Please fix the code to reflect the 
 
 Location: "code-fixes" folder
 
-### Impleemnt Code
+### Implement Code
 This is the third and final assignment to complete. Please implement the code to reflect the functionality described in the unit tests. Do NOT modify the class and function definitions in the lib folder, only add functionality to the parse_data function.
 
 Location: "implement-code" folder
