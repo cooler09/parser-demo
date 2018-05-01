@@ -51,6 +51,18 @@ describe Parser do
                 expect(parser.final_data).to be_include("f")
             end
         end
+        context "given the string '-foobar|<foobar|~fOo|>FOOBAR'" do
+            it "should add 'f','FOOBAR','FoO','foobar' to the final_data array" do
+                parser = Parser.new("-foobar|<foobar|~fOo|>FOOBAR")
+                expect(parser.final_data).to eql(['f','FOOBAR','FoO','foobar'])
+            end
+        end
+        context "given the string '~fOo|-foobar|>fOOBAR|<foobar'" do
+            it "should add 'FoO','f','FOOBAR','foobar' to the final_data array" do
+                parser = Parser.new("~fOo|-foobar|>fOOBAR|<foobar")
+                expect(parser.final_data).to eql(['FoO','f','foobar','FOOBAR'])
+            end
+        end
     end
     describe "Error handling" do
         context "given the string '+foo'" do
