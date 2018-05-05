@@ -5,7 +5,7 @@ describe Parser do
         context "given string 'FIRST Steve'" do
             it "should add 'Steve' to fnames array" do
                 parser = Parser.new("FIRST Steve")
-                expect(parser.fnames).to be_include('Steve')
+                expect(parser.fnames).to be_include("Steve")
             end
         end
         context "given the string 'FIRST '" do
@@ -75,10 +75,10 @@ describe Parser do
     end
     context "given the string 'MIDDLE Adam'" do
         it "should raise 'format error'" do
-            expect{Parser.new("MIDDLE Adam")}.to raise_error('format error')
+            expect{Parser.new("MIDDLE Adam")}.to raise_error("format error")
         end
     end
 
-    
+
 
 end
