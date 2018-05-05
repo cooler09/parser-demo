@@ -4,39 +4,42 @@ describe Parser do
     before do
         @parser = Parser.new
     end
+
     describe ".parse" do
-        context "given the number 3" do
-            it "should raise error" do
+        context "error conditions" do
+            it "only parses strings, not numbers" do
                 expect{@parser.parse("3")}.to raise_error("Please enter a string to parse")
             end
         end
-        context "given the value 'foo,bar'" do
-            it "should return ['foo','bar']" do
+
+        context "without a specified separator" do
+            it "separates by comma and returns an array of strings" do
                 expect(@parser.parse("foo,bar")).to eql(['bar','foo'])
             end
         end
-        context "given the string 'pipe:foo|bar'" do
-            it "should return ['foo','bar']" do
+
+        context "when the separator is specified" do
+            it "can use pipe as a separator" do
                 expect(@parser.parse("pipe:foo|bar")).to be(['foo','bar'])
             end
-        end
-        context "given the string 'comma:foo,bar'" do
-            it "should return ['foo','bar']" do
+
+            it "can use comma as an explicit separator" do
                 expect(@parser.parse("pipe:foo,bar")).to eql(['foo','bar'])
             end
         end
-        context "given the string 'pipe:foo,bar'" do
-            it "should not return ['foo','bar']" do
+
+        context "when the specified separator isn't in the string" do
+            it "won't separate by the default separator" do
                 expect(@parser.parse("pipe:foo,bar")).to eql(['foo','bar'])
             end
-        end
-        context "given the string 'pipe:foo,bar'" do
-            it "should return ['foo,bar']" do
+
+            it "returns just one element" do
                 expect(@parser.parse("pipe:foo|bar")).to eql(['foo,bar'])
             end
         end
-        context "given the string 'pipe:foo|bar|3'" do
-            it "should return ['foo','bar','3']" do
+
+        context "with more than two elements" do
+            it "returns them all as strings" do
                 expect(@parser.parse("pipe:foo|bar|3")).to eql(['foo','bar',3])
             end
         end
