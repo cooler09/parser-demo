@@ -4,14 +4,26 @@ A developer has gone rampant! Before storming out the door, a developer maliciou
 ### Fix the tests
 This is the first of the three to complete. Please fix the unit tests to reflect the actual functionality. Do NOT change any of the code in the lib folder or the description of each unit test - you should only be changing unit test code.
 
-Location: "unit-test-fixes" folder
+To get started, open the file `unit-test-fixes/spec/parser_spec.rb`, then run the tests:
+```
+cd unit-test-fixes
+rspec
+```
 
 ### Fix the code
 This is the second of the three to complete. Please fix the code to reflect the functionality described in the unit tests. Do NOT change any of the code in the spec folder.
 
-Location: "code-fixes" folder
+To get started, open the file `code-fixes/lib/parser.rb`, then run the tests:
+```
+cd code-fixes
+rspec
+```
 
 ### Write the code
-This is the third and final assignment to complete. Please implement the code to reflect the functionality described in the unit tests. Do NOT modify the class and function definitions in the lib folder and do NOT modify any code inthe spec folder. You should add functionality to the parse_data function in the lib folder.
+This is the third and final assignment to complete. Please implement the code to reflect the functionality described in the unit tests. Do NOT modify the class and function definitions in the lib folder and do NOT modify any code in the spec folder. You should add functionality to the parse_data function in the lib folder.
 
-Location: "implement-code" folder
+To get started, open the file `implement-code/lib/parser.rb`, then run the tests:
+```
+cd implement-code
+rspec
+```
