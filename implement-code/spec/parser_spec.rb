@@ -8,7 +8,7 @@ describe Parser do
                 expect(parser.final_data).to be_include("FoO")
             end
         end
-        
+
         context "given the string '~FOo'" do
             it "should add 'foO' to the final_data array" do
                 parser = Parser.new("~FOo")
@@ -60,7 +60,7 @@ describe Parser do
         context "given the string '~fOo|-foobar|>fOOBAR|<foobar'" do
             it "should add 'FoO','f','FOOBAR','foobar' to the final_data array" do
                 parser = Parser.new("~fOo|-foobar|>fOOBAR|<foobar")
-                expect(parser.final_data).to eql(['FoO','f','foobar','FOOBAR'])
+                expect(parser.final_data).to eql(["FoO","f","foobar","FOOBAR"])
             end
         end
     end
